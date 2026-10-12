@@ -1,0 +1,17 @@
+# =============================================================================
+# SlideFlow — Docker Compose
+# Jalankan: docker compose up -d  →  http://localhost:3000
+# =============================================================================
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: slideflow
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    # Tidak ada environment variable wajib — aplikasi berfungsi tanpa konfigurasi.
+    # environment:
+    #   - PORT=3000

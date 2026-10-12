@@ -1,0 +1,49 @@
+# =============================================================================
+# .dockerignore — jaga build context kecil & aman
+# =============================================================================
+
+# Dependensi & hasil build lokal (di-install/build ulang di dalam image)
+node_modules
+.next
+out
+coverage
+
+# Git & CI/CD
+.git
+.gitignore
+.github
+
+# Log & file sementara
+*.log
+*.tsbuildinfo
+
+# Environment (rahasia tidak boleh masuk image)
+.env
+.env.*
+!.env.example
+
+# Folder kerja sandbox/agent yang tidak dipakai aplikasi
+db
+upload
+download
+agent-ctx
+.zscripts
+tests
+skills
+examples
+mini-services
+docs
+tool-results
+
+# File dokumentasi & meta proyek (tidak diperlukan di dalam image)
+README.md
+worklog.md
+
+# Docker & orkestrasi (tidak dibutuhkan di dalam build context)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Vercel & editor
+.vercel
+.DS_Store
